@@ -12,6 +12,8 @@
         <th>ID</th>
         <th>Title</th>
         <th>Author</th>
+        <th>ISBN</th>
+        <th>Copies</th>                
     </tr>
     <tr th:each="book : ${books}">
         <td th:text="${book.bookId}">123</td>
