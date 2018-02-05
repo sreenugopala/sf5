@@ -1,4 +1,4 @@
-package com.sreenivaasamu.demoz.sf5.Demo;
+package com.sreenivaasamu.demoz.sf5.test;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
