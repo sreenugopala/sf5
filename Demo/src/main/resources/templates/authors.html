@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Sreenu - Authors</title>
+</head>
+<body>
+<h1>Authors List</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Author</th>
+        <th>Books</th>
+        <th>Rating</th>                
+    </tr>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.authorId}">123</td>
+        <td th:text="${author.firstName} + ', ' + ${author.lastName}">John, Thompson</td>
+        <td th:text="${author.books}">Spring Guru</td>
+        <td th:text="${author.rating}">4</td>                
+    </tr>
+</table>
+
+</body>
+</html>
