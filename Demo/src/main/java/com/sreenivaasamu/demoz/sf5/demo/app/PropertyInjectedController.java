@@ -3,16 +3,16 @@ package com.sreenivaasamu.demoz.sf5.demo.app;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import com.sreenivaasamu.demoz.sf5.demo.service.impl.MissileLauncherImpl;
+import com.sreenivaasamu.demoz.sf5.demo.service.MissileLauncher;
 
 @Controller
 public class PropertyInjectedController {
 
 	@Autowired
-    public MissileLauncherImpl launcherService;
+    public MissileLauncher missileLauncherImpl;
 
     public String launch(){
-        return launcherService.launch("Brahmos");
+        return missileLauncherImpl.launch("Brahmos - From No Qualifier, But variable name");
     }
 
 }

@@ -16,7 +16,7 @@ public class PropertyInjectedControllerTest {
 	@Before
 	public void setUp() throws Exception {
 		this.propertyInjectedController = new PropertyInjectedController();
-		this.propertyInjectedController.launcherService = new MissileLauncherImpl();
+		this.propertyInjectedController.missileLauncherImpl = new MissileLauncherImpl();
 	}
 
 	@Test

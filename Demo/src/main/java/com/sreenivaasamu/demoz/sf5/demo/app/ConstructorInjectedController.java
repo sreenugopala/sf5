@@ -1,6 +1,7 @@
 package com.sreenivaasamu.demoz.sf5.demo.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.sreenivaasamu.demoz.sf5.demo.service.MissileLauncher;
@@ -11,7 +12,7 @@ public class ConstructorInjectedController {
 	private MissileLauncher launcherService;
 
 	@Autowired
-	public ConstructorInjectedController(MissileLauncher launcherService) {
+	public ConstructorInjectedController(@Qualifier("surfaceMissileLauncherImpl") MissileLauncher launcherService) {
 		this.launcherService = launcherService;
 	}
 
