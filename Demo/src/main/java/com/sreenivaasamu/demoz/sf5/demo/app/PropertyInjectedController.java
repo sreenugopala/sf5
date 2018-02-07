@@ -12,7 +12,7 @@ public class PropertyInjectedController {
     public MissileLauncher missileLauncherImpl;
 
     public String launch(){
-        return missileLauncherImpl.launch("Brahmos - From No Qualifier, But variable name");
+        return missileLauncherImpl.launch("Brahmos - From Primary, overriding variable name");
     }
 
 }
