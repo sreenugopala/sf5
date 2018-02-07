@@ -16,21 +16,22 @@ import com.sreenivaasamu.demoz.sf5.demo.repo.BookRepository;
 @Component
 public class BootStrapper implements ApplicationListener<ContextRefreshedEvent>{
 	
-	private AuthorRepository authorRepo;
+/*	private AuthorRepository authorRepo;
 	private BookRepository bookRepo;
-	
+*/	
+/*
 	public BootStrapper(AuthorRepository authorRepo, BookRepository bookRepo) {
 		super();
 		this.authorRepo = authorRepo;
 		this.bookRepo = bookRepo;
 	}
-
+*/
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent cre) {
 		
-		loadDefaultData();
+		//loadDefaultData();
 	}
-	
+/*	
 	private void loadDefaultData()
 	{
 		Book bhagavadgeetha = new Book();
@@ -71,4 +72,4 @@ public class BootStrapper implements ApplicationListener<ContextRefreshedEvent>{
 		bookRepo.saveAll(Arrays.asList(bhagavadgeetha, uddhavageetha,tripurarahasya));
 	}
 
-}
+*/}
