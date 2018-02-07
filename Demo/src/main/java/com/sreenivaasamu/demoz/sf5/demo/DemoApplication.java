@@ -8,8 +8,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		try {
-//			SpringApplication.run(DemoApplication.class, args);
-		} catch (Throwable ex) {
+			SpringApplication.run(DemoApplication.class, args);
+		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 	}

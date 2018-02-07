@@ -8,8 +8,7 @@ import com.sreenivaasamu.demoz.sf5.demo.repo.AuthorRepository;
 
 @Controller
 public class AuthorsController {
-	
-	AuthorRepository authorRepo;
+		AuthorRepository authorRepo;
 	
 	public AuthorsController(AuthorRepository authorRepo) {
 		super();

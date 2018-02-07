@@ -13,16 +13,16 @@ import javax.persistence.ManyToMany;
 public class Author {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long authorId;
-	
+
 	private String firstName;
 
 	private String lastName;
 
 	private int rating;
-	
-	@ManyToMany(mappedBy="authors")
+
+	@ManyToMany(mappedBy = "authors")
 	private Set<Book> books = new HashSet<>(5);
 
 	public Author() {
@@ -34,7 +34,7 @@ public class Author {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.rating = rating;
-		
+
 		this.books = books;
 	}
 
@@ -80,8 +80,7 @@ public class Author {
 
 	@Override
 	public String toString() {
-		return String.format("Author [firstName=%s, lastName=%s, rating=%s]"
-				, firstName, lastName, rating);
+		return String.format("Author [firstName=%s, lastName=%s, rating=%s]", firstName, lastName, rating);
 	}
 
 	@Override

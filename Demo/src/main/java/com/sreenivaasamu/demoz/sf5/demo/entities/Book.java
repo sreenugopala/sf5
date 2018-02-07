@@ -15,18 +15,17 @@ import javax.persistence.ManyToMany;
 
 @Entity
 public class Book {
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long bookId;
 
 	private String title;
 	private String isbn;
 	private Long copiesSold;
-	
+
 	@ManyToMany
-	@JoinTable(name="author_book_map", joinColumns = @JoinColumn(name="bookid")
-			, inverseJoinColumns=@JoinColumn(name="authorid"))
+	@JoinTable(name = "author_book_map", joinColumns = @JoinColumn(name = "bookid"), inverseJoinColumns = @JoinColumn(name = "authorid"))
 	private Set<Author> authors = new HashSet<>();
 
 	public Book() {
@@ -100,16 +99,6 @@ public class Book {
 		if (getClass() != obj.getClass())
 			return false;
 		Book other = (Book) obj;
-		if (authors == null) {
-			if (other.authors != null)
-				return false;
-		} else if (!authors.equals(other.authors))
-			return false;
-		if (copiesSold == null) {
-			if (other.copiesSold != null)
-				return false;
-		} else if (!copiesSold.equals(other.copiesSold))
-			return false;
 		if (isbn == null) {
 			if (other.isbn != null)
 				return false;
@@ -142,5 +131,4 @@ public class Book {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }

@@ -7,15 +7,14 @@ import com.sreenivaasamu.demoz.sf5.demo.service.MissileLauncher;
 @Controller
 public class MyController {
 
-/*	private MissileLauncher launcher;
+	private MissileLauncher launcher;
 
     public MyController(MissileLauncher launcher) {
         this.launcher = launcher;
     }
-*/
+
     public String launch(){
         System.out.println("Hello!!! ");
-        return "Hi";
-//        return launcher.launch("Prithvi-V");
+        return launcher.launch("Prithvi-V");
     }
 }

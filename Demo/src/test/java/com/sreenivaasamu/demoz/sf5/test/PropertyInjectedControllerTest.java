@@ -1,12 +1,13 @@
 package com.sreenivaasamu.demoz.sf5.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import com.sreenivaasamu.demoz.sf5.demo.app.PropertyInjectedController;
 import com.sreenivaasamu.demoz.sf5.demo.service.impl.MissileLauncherImpl;
+
 
 public class PropertyInjectedControllerTest {
 

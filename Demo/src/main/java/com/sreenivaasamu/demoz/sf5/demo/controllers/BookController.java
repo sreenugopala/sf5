@@ -8,17 +8,16 @@ import com.sreenivaasamu.demoz.sf5.demo.repo.BookRepository;
 
 @Controller
 public class BookController {
-	
+
 	private BookRepository bookRepo;
-	
+
 	public BookController(BookRepository bookRepo) {
 		super();
 		this.bookRepo = bookRepo;
 	}
 
 	@RequestMapping("/books")
-	public String getBooks(Model model)
-	{
+	public String getBooks(Model model) {
 		model.addAttribute("books", bookRepo.findAll());
 		return "books";
 	}
