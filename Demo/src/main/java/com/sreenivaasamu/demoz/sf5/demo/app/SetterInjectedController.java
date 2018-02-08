@@ -2,11 +2,14 @@ package com.sreenivaasamu.demoz.sf5.demo.app;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 
 import com.sreenivaasamu.demoz.sf5.demo.service.MissileLauncher;
 
 @Controller
+@Profile("default")
+
 public class SetterInjectedController {
 	private MissileLauncher launcherService;
 

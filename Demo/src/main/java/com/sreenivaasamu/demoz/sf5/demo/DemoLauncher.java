@@ -13,7 +13,7 @@ import com.sreenivaasamu.demoz.sf5.demo.app.SetterInjectedController;
 public class DemoLauncher {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(DemoLauncher.class, args);
+/*		ApplicationContext ctx = SpringApplication.run(DemoLauncher.class, args);
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
@@ -21,5 +21,5 @@ public class DemoLauncher {
 		System.out.println(ctx.getBean(PropertyInjectedController.class).launch());
 		System.out.println(ctx.getBean(SetterInjectedController.class).launch());
 		System.out.println(ctx.getBean(ConstructorInjectedController.class).launch());
-	}
+*/	}
 }
