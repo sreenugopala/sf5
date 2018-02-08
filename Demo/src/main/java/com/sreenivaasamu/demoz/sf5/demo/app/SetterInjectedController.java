@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import com.sreenivaasamu.demoz.sf5.demo.service.MissileLauncher;
 
 @Controller
-@Profile("default")
+@Profile("nuclear")
 
 public class SetterInjectedController {
 	private MissileLauncher launcherService;
