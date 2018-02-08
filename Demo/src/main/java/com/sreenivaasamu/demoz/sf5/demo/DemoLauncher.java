@@ -3,6 +3,7 @@ package com.sreenivaasamu.demoz.sf5.demo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ImportResource;
 
 import com.sreenivaasamu.demoz.sf5.demo.app.ConstructorInjectedController;
 import com.sreenivaasamu.demoz.sf5.demo.app.MyController;
@@ -10,6 +11,7 @@ import com.sreenivaasamu.demoz.sf5.demo.app.PropertyInjectedController;
 import com.sreenivaasamu.demoz.sf5.demo.app.SetterInjectedController;
 
 @SpringBootApplication
+@ImportResource("classpath:beans.xml")
 public class DemoLauncher {
 
 	public static void main(String[] args) {
