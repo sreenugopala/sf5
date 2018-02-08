@@ -1,4 +1,4 @@
-package com.sreenivaasamu.demoz.sf5.demo.app;
+package com.sreenivaasamu.demoz.compscan;
 
 import java.util.concurrent.atomic.AtomicInteger;
 

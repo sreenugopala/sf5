@@ -1,8 +1,10 @@
-package com.sreenivaasamu.demoz.sf5.demo.app;
+package com.sreenivaasamu.demoz.postpro;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Component;
+
+import com.sreenivaasamu.demoz.compscan.LifeCycleDemo;
 
 @Component
 public class CustomBeanPostProcessor implements BeanPostProcessor {
