@@ -5,7 +5,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-import org.springframework.beans.BeansException;
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.beans.factory.BeanNameAware;
@@ -21,52 +23,52 @@ import org.springframework.stereotype.Component;
 public class LifeCycleDemo
 		implements InitializingBean, DisposableBean, BeanNameAware, BeanFactoryAware, ApplicationContextAware {
 
-	AtomicInteger step = new AtomicInteger(0);
+	private AtomicInteger step = new AtomicInteger(0);
+	private static final Logger logger = LogManager.getLogger(LifeCycleDemo.class);
 
 	public LifeCycleDemo() {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@PostConstruct
 	public void postConstruct() {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@PreDestroy
 	public void preDestroy() {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@Override
 	public void destroy() throws Exception {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 
 	}
 
 	@Override
-	public void setApplicationContext(ApplicationContext arg0) throws BeansException {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+	public void setApplicationContext(ApplicationContext arg0){
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@Override
-	public void setBeanFactory(BeanFactory arg0) throws BeansException {
-		System.out.printf("[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
+	public void setBeanFactory(BeanFactory arg0){
+		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
 
 	@Override
 	public void setBeanName(String arg0) {
-		System.out.printf("[%1$s] [%2$s] [%3$s] %n", step.incrementAndGet(), getCallingMethodName(), arg0);
+		logger.printf(Level.INFO, "[%1$s] [%2$s] [%3$s] %n", step.incrementAndGet(), getCallingMethodName(), arg0);
 
 	}
 
 	public static String getCallingMethodName() {
 		final StackTraceElement[] ste = Thread.currentThread().getStackTrace();
 		return ste[2].getMethodName();
-		// return Arrays.toString(ste);
 	}
 }

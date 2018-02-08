@@ -1,5 +1,7 @@
 package com.sreenivaasamu.demoz.sf5.demo;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,14 +16,16 @@ import com.sreenivaasamu.demoz.sf5.demo.app.SetterInjectedController;
 @ImportResource("classpath:beans.xml")
 public class DemoLauncher {
 
+	private static final Logger logger = LogManager.getLogger(DemoLauncher.class);
+	
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(DemoLauncher.class, args);
 
 		MyController controller = (MyController) ctx.getBean("myController");
 
-		System.out.println(controller.launch());
-		System.out.println(ctx.getBean(PropertyInjectedController.class).launch());
-		System.out.println(ctx.getBean(SetterInjectedController.class).launch());
-		System.out.println(ctx.getBean(ConstructorInjectedController.class).launch());
+		logger.info(controller.launch());
+		logger.info(ctx.getBean(PropertyInjectedController.class).launch());
+		logger.info(ctx.getBean(SetterInjectedController.class).launch());
+		logger.info(ctx.getBean(ConstructorInjectedController.class).launch());
 	}
 }
