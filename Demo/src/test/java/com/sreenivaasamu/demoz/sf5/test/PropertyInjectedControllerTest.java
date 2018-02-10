@@ -1,19 +1,17 @@
 package com.sreenivaasamu.demoz.sf5.test;
 
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.sreenivaasamu.demoz.sf5.demo.app.PropertyInjectedController;
 import com.sreenivaasamu.demoz.sf5.demo.service.impl.MissileLauncherImpl;
-
 
 public class PropertyInjectedControllerTest {
 
 	private PropertyInjectedController propertyInjectedController;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
 		this.propertyInjectedController = new PropertyInjectedController();
 		this.propertyInjectedController.missileLauncherImpl = new MissileLauncherImpl();

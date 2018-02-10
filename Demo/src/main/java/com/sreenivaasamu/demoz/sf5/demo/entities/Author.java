@@ -29,6 +29,11 @@ public class Author {
 		super();
 	}
 
+	public Author(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
 	public Author(String firstName, String lastName, int rating, Set<Book> books) {
 		super();
 		this.firstName = firstName;

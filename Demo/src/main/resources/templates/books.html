@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <title>Sreenu - Books</title>
+<meta charset="UTF-8" />
+<title>Sreenu - Books</title>
 </head>
 <body>
-<h1>Book List</h1>
-
-<table border="1">
-    <tr>
-        <th>ID</th>
-        <th>Title</th>
-        <th>Author</th>
-        <th>ISBN</th>
-        <th>Copies</th>                
-    </tr>
-    <tr th:each="book : ${books}">
-        <td th:text="${book.bookId}">123</td>
-        <td th:text="${book.title}">Spring in Action</td>
-        <td th:text="${book.authors}">Wrox</td>
-        <td th:text="${book.isbn}">000000</td>
-        <td th:text="${book.copiesSold}">N/A</td>                
-    </tr>
-</table>
-
+	<h1>Book List</h1>
+	<div class="table-responsive">
+	<table border="1"  class="table-dark table-striped">
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Author</th>
+			<th>ISBN</th>
+			<th>Copies</th>
+		</tr>
+		<tr th:each="book : ${books}">
+			<td th:text="${book.bookId}">123</td>
+			<td th:text="${book.title}">Spring in Action</td>
+			<td th:text="${book.authors}">Wrox</td>
+			<td th:text="${book.isbn}">000000</td>
+			<td th:text="${book.copiesSold}">N/A</td>
+		</tr>
+	</table>
+	</div>
 </body>
 </html>
