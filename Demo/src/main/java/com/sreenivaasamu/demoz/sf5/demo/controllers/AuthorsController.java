@@ -5,23 +5,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sreenivaasamu.demoz.sf5.demo.service.impl.AuthorServiceImpl;
+import com.sreenivaasamu.demoz.sf5.demo.service.AuthorService;
 
 @Controller
 public class AuthorsController {
 	
-	private AuthorServiceImpl authorServiceImpl;
+	private AuthorService authorService;
 	
 	@Autowired
-	public AuthorsController(AuthorServiceImpl authorServiceImpl) {
+	public AuthorsController(AuthorService authorService) {
 		super();
-		this.authorServiceImpl = authorServiceImpl;
+		this.authorService = authorService;
 	}
 
 	@RequestMapping("/authors")
 	public String getAuthors(Model model) {
 		
-		model.addAttribute("authors", authorServiceImpl.getAllAuthors());
+		model.addAttribute("authors", authorService.getAllAuthors());
 		return "authors";
 	}
 

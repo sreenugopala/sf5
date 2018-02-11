@@ -2,6 +2,8 @@ package com.sreenivaasamu.demoz.sf5.test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -75,6 +77,14 @@ public class AuthorServiceImplTest {
 		authors.iterator().forEachRemaining(authorsList::add);
 		
 		assertThat(authorsList.size() > 0);
+		
+		verify(authorRepository, times(1)).findAll();
+		
+		assertNotNull(authorsList.get(0));
+		assertThat("Rod".equals(authorsList.get(0).getFirstName()));
+		
+		assertNotNull(authorsList.get(1));
+		assertThat("Sreenu".equals(authorsList.get(1).getFirstName()));		
 	}
 
 }
