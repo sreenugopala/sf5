@@ -13,12 +13,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.sreenivaasamu.demoz.sf5.demo.DemoLauncher;
+import com.sreenivaasamu.demoz.sf5.demo.app.BootStrapper;
 import com.sreenivaasamu.demoz.sf5.demo.repo.BookRepository;
 
 import lombok.extern.slf4j.Slf4j;
 
 @ExtendWith(SpringExtension.class)
-@SpringBootTest(classes = DemoLauncher.class)
+@SpringBootTest(classes = {DemoLauncher.class})
 //@DataJpaTest
 @Slf4j
 class DatastoreIntegrationTest {
@@ -45,8 +46,8 @@ class DatastoreIntegrationTest {
 	@Test
 	void testBooksRepository() {
 		long noOfBooks = bookRepository.count(); 
-		log.debug("Number of books {0}", noOfBooks);
-		assertThat( noOfBooks == 0).isTrue();
+		log.debug("Number of books : " + noOfBooks);
+		assertThat( noOfBooks > 0).isTrue();
 	}
 
 }
