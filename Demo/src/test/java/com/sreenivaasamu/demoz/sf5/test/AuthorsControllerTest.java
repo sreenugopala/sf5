@@ -1,7 +1,13 @@
 package com.sreenivaasamu.demoz.sf5.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -13,6 +19,8 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.ui.Model;
 
 import com.sreenivaasamu.demoz.sf5.demo.controllers.AuthorsController;
@@ -70,5 +78,15 @@ class AuthorsControllerTest {
 		
 		assertEquals("Sree Raama", passedinAuthorArray[0].getFirstName(), "Authors FirstName Check");
 		assertEquals("Vaasudeva", passedinAuthorArray[1].getLastName(), "Authors LastName Check");
+	}
+	
+	@Test
+	void testWebapp() throws Exception
+	{
+		 MockMvc mockMvc = MockMvcBuilders.standaloneSetup(authorsController).build();
+
+	        mockMvc.perform(get("/authors"));
+	                //.andExpect(status());
+	        		//.andExpect(view().name("authors"));
 	}
 }
