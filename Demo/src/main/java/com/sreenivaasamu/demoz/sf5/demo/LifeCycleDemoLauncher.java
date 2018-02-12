@@ -18,6 +18,7 @@ public class LifeCycleDemoLauncher {
 			ctx = SpringApplication.run(LifeCycleDemoLauncher.class, args);
 
 			LifeCycleDemo demoBean = (LifeCycleDemo) ctx.getBean("lifeCycleDemo");
+			demoBean.sayGovinda();
 		} finally {
 			if (ctx != null) {
 				((ConfigurableApplicationContext) ctx).close();

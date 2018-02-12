@@ -6,9 +6,6 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -59,7 +56,8 @@ class AuthorsControllerTest {
 	@Test
 	void testGetAuthors() {
 		
-        ArgumentCaptor<Set<Author>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
+        @SuppressWarnings("unchecked")
+		ArgumentCaptor<Set<Author>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
 
 		
 		String viewName = authorsController.getAuthors(model);

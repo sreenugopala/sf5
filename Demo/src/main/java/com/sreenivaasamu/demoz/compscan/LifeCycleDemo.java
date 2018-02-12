@@ -29,6 +29,11 @@ public class LifeCycleDemo
 	public LifeCycleDemo() {
 		logger.printf(Level.INFO, "[%1$s] [%2$s] %n", step.incrementAndGet(), getCallingMethodName());
 	}
+	
+	public void sayGovinda()
+	{
+		logger.printf(Level.INFO, "Jai Govinda%n");
+	}
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
