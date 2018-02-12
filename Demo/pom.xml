@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.sreenivaasamu.demoz.sf5</groupId>
-	<artifactId>jpa</artifactId>
+	<artifactId>mysnippets</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>Demo</name>
+	<name>mysnippets</name>
 	<description>Demo project for Spring5 by Sreenu</description>
 
 	<parent>
@@ -87,6 +87,12 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<version>1.5.10.RELEASE</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.webjars</groupId>
 			<artifactId>bootstrap</artifactId>
 			<version>4.0.0-alpha</version>
@@ -157,7 +163,7 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-<plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 				<configuration>
@@ -177,7 +183,7 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
 		</plugins>
 	</build>
 

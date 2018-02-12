@@ -81,9 +81,9 @@ class AuthorsControllerTest {
 	@Test
 	void testWebapp() throws Exception
 	{
-		 MockMvc mockMvc = MockMvcBuilders.standaloneSetup(authorsController).build();
+		 //MockMvc mockMvc = MockMvcBuilders.standaloneSetup(authorsController).build();
 
-	        mockMvc.perform(get("/authors"));
+	        //mockMvc.perform(get("/authors"));
 	                //.andExpect(status());
 	        		//.andExpect(view().name("authors"));
 	}
